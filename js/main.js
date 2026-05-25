@@ -36,24 +36,4 @@ window.FipeApp = {
       }
     });
   });
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.feature-card, .phone-mockup-static').forEach(function (el) {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-
-  var style = document.createElement('style');
-  style.textContent = '.feature-card.is-visible, .phone-mockup-static.is-visible { opacity: 1 !important; transform: translateY(0) !important; }';
-  document.head.appendChild(style);
 })();
