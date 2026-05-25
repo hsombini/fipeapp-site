@@ -7,21 +7,18 @@ window.FipeApp = {
 };
 
 (function () {
-  // ---- Set current year ----
-  var currentYear = new Date().getFullYear();
+  var year = new Date().getFullYear();
   var yearEl = document.getElementById('currentYear');
-  if (yearEl) yearEl.textContent = currentYear;
+  if (yearEl) yearEl.textContent = year;
   document.querySelectorAll('.copyright-year').forEach(function (el) {
-    el.textContent = currentYear;
+    el.textContent = year;
   });
 
-  // ---- Replace app name placeholders ----
   document.querySelectorAll('.app-name').forEach(function (el) {
     el.textContent = window.FipeApp.name;
   });
-  document.title = window.FipeApp.name + ' — Preços de Veículos na Palma da Mão';
+  document.title = window.FipeApp.name + ' — Precos de Veiculos na Palma da Mao';
 
-  // ---- Navbar burger ----
   var burger = document.querySelector('.navbar-burger');
   var menu = document.getElementById('mainNavbar');
   if (burger && menu) {
@@ -31,7 +28,6 @@ window.FipeApp = {
     });
   }
 
-  // ---- Close mobile menu on link click ----
   document.querySelectorAll('#mainNavbar .navbar-item').forEach(function (item) {
     item.addEventListener('click', function () {
       if (burger && burger.classList.contains('is-active')) {
@@ -41,20 +37,23 @@ window.FipeApp = {
     });
   });
 
-  // ---- Fade-in animation on scroll ----
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('.feature-card, .phone-mockup-static').forEach(function (el) {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
   });
+
+  var style = document.createElement('style');
+  style.textContent = '.feature-card.is-visible, .phone-mockup-static.is-visible { opacity: 1 !important; transform: translateY(0) !important; }';
+  document.head.appendChild(style);
 })();

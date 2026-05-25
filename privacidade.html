@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Política de Privacidade do FipeApp — saiba como tratamos seus dados pessoais de acordo com a LGPD e os requisitos da Play Store e App Store.">
-  <meta name="theme-color" content="#0043ce">
+  <meta name="theme-color" content="#0f172a">
   <title>Política de Privacidade — FipeApp</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="privacy-page">
 
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item logo" href="index.html">
-          <i class="fa-solid fa-car-side"></i>
-          <span class="app-name">FipeApp</span>
+          <i class="fa-solid fa-car-side"></i>&ensp;<span class="app-name">FipeApp</span><span class="logo-dot">.</span>
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
           <span aria-hidden="true"></span>
@@ -32,272 +31,274 @@
           <a class="navbar-item" href="index.html#recursos">Recursos</a>
           <a class="navbar-item" href="index.html#telas">Telas</a>
           <a class="navbar-item" href="index.html#baixar">Baixar</a>
-          <a class="navbar-item is-active" href="privacidade.html">Privacidade</a>
+          <a class="navbar-item" href="privacidade.html">Privacidade</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <section class="section" style="padding-top: 6rem;">
+  <div class="privacy-hero">
     <div class="container">
-      <div class="privacy-content">
-
-        <h1 class="title is-2 has-text-weight-bold" style="color: var(--text); letter-spacing: -0.5px;">Política de Privacidade</h1>
-        <p class="privacy-date"><strong>Última atualização:</strong> 22 de maio de 2025</p>
-
-        <p>
-          A <strong>IndieCompany</strong>, desenvolvedora do aplicativo <strong class="app-name">FipeApp</strong>,
-          valoriza a privacidade dos seus usuários. Esta Política de Privacidade descreve como tratamos
-          suas informações pessoais em conformidade com a
-          <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong> e com os
-          requisitos das plataformas <strong>Google Play</strong> e <strong>Apple App Store</strong>.
-        </p>
-
-        <p>
-          Ao utilizar o <strong class="app-name">FipeApp</strong>, você concorda com a coleta e o uso
-          das informações descritas nesta política. Caso não concorde, pedimos que descontinue o uso
-          do aplicativo.
-        </p>
-
-        <h2 class="title is-4">1. Quem somos</h2>
-        <p>
-          <strong>Controlador dos dados:</strong> IndieCompany<br>
-          <strong>E-mail para privacidade:</strong> <a href="mailto:contato@indiecompany.com.br">contato@indiecompany.com.br</a><br>
-          <strong>Website:</strong> <a href="https://fipeapp.varella.ovh">fipeapp.varella.ovh</a>
-        </p>
-
-        <h2 class="title is-4">2. Dados que coletamos</h2>
-        <p>
-          O <strong class="app-name">FipeApp</strong> foi desenvolvido com o princípio de
-          <strong>minimização de dados</strong>. Coletamos apenas o estritamente necessário para
-          fornecer nossas funcionalidades.
-        </p>
-        <p><strong>2.1 Dados fornecidos por você:</strong></p>
-        <ul>
-          <li><strong>Consultas e pesquisas:</strong> placas de veículos, modelos e anos informados
-            nas buscas. Esses dados são utilizados exclusivamente para retornar os resultados da Tabela FIPE
-            e não são armazenados em nossos servidores após a consulta.</li>
-          <li><strong>Favoritos e preferências:</strong> lista de veículos salvos e configurações do
-            aplicativo, armazenados <strong>localmente no seu dispositivo</strong>.</li>
-        </ul>
-
-        <p><strong>2.2 Dados coletados automaticamente:</strong></p>
-        <ul>
-          <li><strong>Dados de uso anônimos:</strong> telas acessadas, tempo de uso e interações
-            dentro do app, coletados exclusivamente via Firebase Analytics (Google) de forma
-            anonimizada e agregada, sem identificação pessoal.</li>
-          <li><strong>Dados de crash:</strong> informações sobre falhas do aplicativo via Firebase
-            Crashlytics para melhorarmos a estabilidade.</li>
-          <li><strong>Identificador de instalação:</strong> um identificador anônimo gerado pelo
-            Firebase para distinguir instalações únicas, sem vínculo com sua identidade real.</li>
-        </ul>
-
-        <p><strong>2.3 Dados que NÃO coletamos:</strong></p>
-        <ul>
-          <li>Nome completo, CPF, RG ou qualquer documento de identificação</li>
-          <li>Endereço físico ou dados de localização precisa (GPS)</li>
-          <li>Lista de contatos, fotos ou arquivos do dispositivo</li>
-          <li>Dados de cartão de crédito ou informações bancárias</li>
-          <li>Informações de saúde, biométricas ou sensíveis</li>
-        </ul>
-
-        <h2 class="title is-4">3. Finalidade do tratamento</h2>
-        <p>
-          Tratamos seus dados pessoais com as seguintes finalidades, sempre amparados por uma base
-          legal prevista na LGPD:
-        </p>
-        <table class="table is-bordered is-striped is-fullwidth">
-          <thead>
-            <tr><th>Finalidade</th><th>Dados utilizados</th><th>Base legal (LGPD)</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Consultar preços FIPE pela placa ou modelo</td>
-              <td>Placa ou modelo informado</td>
-              <td>Execução de contrato (art. 7º, V)</td>
-            </tr>
-            <tr>
-              <td>Calcular estimativa de IPVA</td>
-              <td>Modelo, ano e estado selecionado</td>
-              <td>Execução de contrato (art. 7º, V)</td>
-            </tr>
-            <tr>
-              <td>Salvar veículos favoritos</td>
-              <td>Dados do veículo (armazenamento local)</td>
-              <td>Consentimento (art. 7º, I)</td>
-            </tr>
-            <tr>
-              <td>Melhorar o app (estatísticas de uso)</td>
-              <td>Dados de uso anonimizados</td>
-              <td>Legítimo interesse (art. 7º, IX)</td>
-            </tr>
-            <tr>
-              <td>Corrigir falhas (crash reports)</td>
-              <td>Dados de crash anonimizados</td>
-              <td>Legítimo interesse (art. 7º, IX)</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2 class="title is-4">4. Compartilhamento de dados</h2>
-
-        <h3 class="title is-5">4.1 Terceiros</h3>
-        <p>Compartilhamos dados apenas com os seguintes terceiros, estritamente para as finalidades descritas:</p>
-        <ul>
-          <li><strong>Google Firebase</strong> (Google LLC, EUA) — serviços de analytics e crash reporting.
-            Os dados são anonimizados e tratados conforme a
-            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política de Privacidade do Firebase</a>.</li>
-          <li><strong>APIs públicas da FIPE</strong> — utilizadas para consulta de preços, sem envio
-            de dados pessoais identificáveis.</li>
-        </ul>
-
-        <h3 class="title is-5">4.2 Transferência internacional</h3>
-        <p>
-          O Google Firebase pode processar dados em servidores localizados nos Estados Unidos.
-          A IndieCompany assegura que tais transferências seguem as cláusulas contratuais padrão e
-          as determinações da LGPD (art. 33), exigindo o mesmo nível de proteção de dados do Brasil.
-        </p>
-
-        <h3 class="title is-5">4.3 Não vendemos dados</h3>
-        <p>
-          A IndieCompany <strong>não vende, aluga ou comercializa</strong> dados pessoais dos usuários
-          para terceiros sob qualquer circunstância.
-        </p>
-
-        <h2 class="title is-4">5. Seus direitos (LGPD)</h2>
-        <p>
-          A LGPD (Lei nº 13.709/2018) garante a você, titular dos dados, os seguintes direitos:
-        </p>
-        <ul>
-          <li><strong>Confirmação e acesso</strong> — saber se tratamos seus dados e acessá-los (art. 18, I e II)</li>
-          <li><strong>Correção</strong> — solicitar a correção de dados incompletos ou desatualizados (art. 18, III)</li>
-          <li><strong>Anonimização, bloqueio ou eliminação</strong> — solicitar a exclusão de dados desnecessários ou
-            tratados em desconformidade com a lei (art. 18, IV)</li>
-          <li><strong>Portabilidade</strong> — receber seus dados em formato estruturado (art. 18, V)</li>
-          <li><strong>Eliminação</strong> — solicitar a exclusão total dos dados tratados com consentimento (art. 18, VI)</li>
-          <li><strong>Oposição</strong> — opor-se a determinado tratamento (art. 18, §2º)</li>
-          <li><strong>Revogação do consentimento</strong> — retirar o consentimento a qualquer momento (art. 8º, §5º)</li>
-          <li><strong>Revisão automatizada</strong> — solicitar revisão de decisões automatizadas (art. 20)</li>
-        </ul>
-        <p>
-          Para exercer qualquer desses direitos, entre em contato pelo e-mail
-          <a href="mailto:contato@indiecompany.com.br">contato@indiecompany.com.br</a>.
-          Responderemos em até <strong>15 dias</strong> corridos.
-        </p>
-
-        <h2 class="title is-4">6. Segurança dos dados</h2>
-        <p>
-          Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não
-          autorizados, perda, destruição ou alteração:
-        </p>
-        <ul>
-          <li>Criptografia de dados em trânsito (TLS 1.3 / HTTPS)</li>
-          <li>Armazenamento em servidores seguros com controle de acesso restrito</li>
-          <li>Minimização de dados: armazenamos localmente sempre que possível</li>
-          <li>Monitoramento contínuo contra vulnerabilidades e acessos indevidos</li>
-          <li>Testes de segurança periódicos em nossas integrações</li>
-        </ul>
-
-        <h2 class="title is-4">7. Retenção de dados</h2>
-        <p>
-          Mantemos seus dados apenas pelo tempo necessário para cumprir as finalidades descritas nesta
-          política ou conforme exigido por lei:
-        </p>
-        <ul>
-          <li><strong>Consultas de placa/modelo:</strong> não são armazenadas em nossos servidores.
-            Processadas em tempo real e descartadas após a resposta.</li>
-          <li><strong>Favoritos e preferências:</strong> armazenados localmente no dispositivo. Ao
-            desinstalar o app, esses dados são automaticamente removidos.</li>
-          <li><strong>Dados de analytics e crash:</strong> armazenados por até 26 meses pelo Firebase,
-            conforme política de retenção padrão do Google Analytics.</li>
-        </ul>
-
-        <h2 class="title is-4">8. Privacidade de crianças</h2>
-        <p>
-          O <strong class="app-name">FipeApp</strong> não é direcionado a crianças menores de 13 anos.
-          Não coletamos intencionalmente dados de crianças. Se você é pai, mãe ou responsável e souber
-          que seu filho nos forneceu dados pessoais sem o seu consentimento, entre em contato conosco
-          para que possamos remover essas informações imediatamente.
-        </p>
-        <p>
-          Nosso aplicativo está em conformidade com a
-          <strong>Children's Online Privacy Protection Act (COPPA)</strong> dos EUA e com os requisitos
-          de conteúdo infantil da Google Play e App Store.
-        </p>
-
-        <h2 class="title is-4">9. Cookies e tecnologias similares</h2>
-        <p>
-          O <strong class="app-name">FipeApp</strong> é um aplicativo nativo (não um website) e
-          <strong>não utiliza cookies de rastreamento</strong>. O Firebase Analytics utiliza
-          identificadores anônimos de instância de app, que não constituem cookies tradicionais.
-        </p>
-
-        <h2 class="title is-4" id="termos">10. Termos de Uso</h2>
-        <p>
-          Ao utilizar o <strong class="app-name">FipeApp</strong>, você concorda com os seguintes termos:
-        </p>
-        <ul>
-          <li>O aplicativo utiliza dados públicos da Tabela FIPE e de APIs de consulta veicular. Os
-            valores e informações são fornecidos "como estão" (as-is), sem garantia de exatidão absoluta.</li>
-          <li>A estimativa de IPVA é baseada em alíquotas estaduais públicas e no valor FIPE do veículo.
-            O valor real pode variar conforme legislação estadual, descontos ou isenções aplicáveis.</li>
-          <li>Você é responsável pelo uso das informações fornecidas pelo app. A IndieCompany não se
-            responsabiliza por decisões financeiras ou comerciais tomadas com base nos dados do app.</li>
-          <li>É proibido o uso do app para fins ilícitos, mineração de dados, engenharia reversa ou
-            qualquer atividade que viole a legislação brasileira.</li>
-          <li>A IndieCompany reserva-se o direito de modificar estes Termos de Uso a qualquer momento,
-            notificando os usuários sobre alterações significativas.</li>
-        </ul>
-
-        <h2 class="title is-4">11. Alterações nesta política</h2>
-        <p>
-          Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre alterações
-          significativas por meio de:
-        </p>
-        <ul>
-          <li>Aviso dentro do próprio aplicativo</li>
-          <li>Atualização na página de privacidade do nosso site</li>
-          <li>E-mail (quando aplicável e se tivermos seu contato)</li>
-        </ul>
-        <p>
-          Recomendamos a revisão periódica desta política. O uso continuado do aplicativo após
-          modificações constitui aceitação das novas condições.
-        </p>
-
-        <h2 class="title is-4">12. Encarregado de Dados (DPO)</h2>
-        <p>
-          Nosso Encarregado pelo Tratamento de Dados Pessoais (Data Protection Officer) está à
-          disposição para esclarecer dúvidas e receber comunicações dos titulares e da Autoridade
-          Nacional de Proteção de Dados (ANPD):
-        </p>
-        <ul>
-          <li><strong>Nome:</strong> Encarregado de Privacidade — IndieCompany</li>
-          <li><strong>E-mail:</strong> <a href="mailto:contato@indiecompany.com.br">contato@indiecompany.com.br</a></li>
-        </ul>
-
-        <h2 class="title is-4">13. Legislação aplicável e foro</h2>
-        <p>
-          Esta política é regida pela legislação da República Federativa do Brasil, em especial a
-          Lei nº 13.709/2018 (LGPD), Marco Civil da Internet (Lei nº 12.965/2014) e Código de Defesa
-          do Consumidor (Lei nº 8.078/1990). Fica eleito o foro da comarca de São Paulo/SP para
-          dirimir quaisquer controvérsias decorrentes desta política.
-        </p>
-
-        <hr>
-
-        <p class="has-text-centered is-size-7" style="color: var(--text-muted);">
-          &copy; <span id="currentYear"></span> IndieCompany. Todos os direitos reservados.<br>
-          <a href="index.html">Voltar ao início</a>
-        </p>
-
-      </div>
+      <a href="index.html" class="privacy-back">
+        <i class="fa-solid fa-arrow-left"></i> Voltar ao início
+      </a>
+      <h1>Política de Privacidade</h1>
+      <p>Última atualização: 22 de maio de 2025</p>
     </div>
-  </section>
+  </div>
 
-  <footer class="footer">
-    <div class="container has-text-centered footer-bottom">
+  <div class="privacy-content">
+
+    <p>
+      A <strong>IndieCompany</strong>, desenvolvedora do aplicativo <strong class="app-name">FipeApp</strong>,
+      valoriza a privacidade dos seus usuários. Esta Política de Privacidade descreve como tratamos
+      suas informações pessoais em conformidade com a
+      <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong> e com os
+      requisitos das plataformas <strong>Google Play</strong> e <strong>Apple App Store</strong>.
+    </p>
+
+    <p>
+      Ao utilizar o <strong class="app-name">FipeApp</strong>, você concorda com a coleta e o uso
+      das informações descritas nesta política. Caso não concorde, pedimos que descontinue o uso
+      do aplicativo.
+    </p>
+
+    <h2>1. Quem somos</h2>
+    <p>
+      <strong>Controlador dos dados:</strong> IndieCompany<br>
+      <strong>E-mail para privacidade:</strong> <a href="mailto:contato@indiecompany.com.br">contato@indiecompany.com.br</a><br>
+      <strong>Website:</strong> <a href="https://fipeapp.varella.ovh">fipeapp.varella.ovh</a>
+    </p>
+
+    <h2>2. Dados que coletamos</h2>
+    <p>
+      O <strong class="app-name">FipeApp</strong> foi desenvolvido com o princípio de
+      <strong>minimização de dados</strong>. Coletamos apenas o estritamente necessário para
+      fornecer nossas funcionalidades.
+    </p>
+    <p><strong>2.1 Dados fornecidos por você:</strong></p>
+    <ul>
+      <li><strong>Consultas e pesquisas:</strong> placas de veículos, modelos e anos informados
+        nas buscas. Esses dados são utilizados exclusivamente para retornar os resultados da Tabela FIPE
+        e não são armazenados em nossos servidores após a consulta.</li>
+      <li><strong>Favoritos e preferências:</strong> lista de veículos salvos e configurações do
+        aplicativo, armazenados <strong>localmente no seu dispositivo</strong>.</li>
+    </ul>
+
+    <p><strong>2.2 Dados coletados automaticamente:</strong></p>
+    <ul>
+      <li><strong>Dados de uso anônimos:</strong> telas acessadas, tempo de uso e interações
+        dentro do app, coletados exclusivamente via Firebase Analytics (Google) de forma
+        anonimizada e agregada, sem identificação pessoal.</li>
+      <li><strong>Dados de crash:</strong> informações sobre falhas do aplicativo via Firebase
+        Crashlytics para melhorarmos a estabilidade.</li>
+      <li><strong>Identificador de instalação:</strong> um identificador anônimo gerado pelo
+        Firebase para distinguir instalações únicas, sem vínculo com sua identidade real.</li>
+    </ul>
+
+    <p><strong>2.3 Dados que NÃO coletamos:</strong></p>
+    <ul>
+      <li>Nome completo, CPF, RG ou qualquer documento de identificação</li>
+      <li>Endereço físico ou dados de localização precisa (GPS)</li>
+      <li>Lista de contatos, fotos ou arquivos do dispositivo</li>
+      <li>Dados de cartão de crédito ou informações bancárias</li>
+      <li>Informações de saúde, biométricas ou sensíveis</li>
+    </ul>
+
+    <h2>3. Finalidade do tratamento</h2>
+    <p>
+      Tratamos seus dados pessoais com as seguintes finalidades, sempre amparados por uma base
+      legal prevista na LGPD:
+    </p>
+    <table class="table is-bordered is-striped is-fullwidth">
+      <thead>
+        <tr><th>Finalidade</th><th>Dados utilizados</th><th>Base legal (LGPD)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Consultar preços FIPE pela placa ou modelo</td>
+          <td>Placa ou modelo informado</td>
+          <td>Execução de contrato (art. 7º, V)</td>
+        </tr>
+        <tr>
+          <td>Calcular estimativa de IPVA</td>
+          <td>Modelo, ano e estado selecionado</td>
+          <td>Execução de contrato (art. 7º, V)</td>
+        </tr>
+        <tr>
+          <td>Salvar veículos favoritos</td>
+          <td>Dados do veículo (armazenamento local)</td>
+          <td>Consentimento (art. 7º, I)</td>
+        </tr>
+        <tr>
+          <td>Melhorar o app (estatísticas de uso)</td>
+          <td>Dados de uso anonimizados</td>
+          <td>Legítimo interesse (art. 7º, IX)</td>
+        </tr>
+        <tr>
+          <td>Corrigir falhas (crash reports)</td>
+          <td>Dados de crash anonimizados</td>
+          <td>Legítimo interesse (art. 7º, IX)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Compartilhamento de dados</h2>
+
+    <h3>4.1 Terceiros</h3>
+    <p>Compartilhamos dados apenas com os seguintes terceiros, estritamente para as finalidades descritas:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> (Google LLC, EUA) — serviços de analytics e crash reporting.
+        Os dados são anonimizados e tratados conforme a
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política de Privacidade do Firebase</a>.</li>
+      <li><strong>APIs públicas da FIPE</strong> — utilizadas para consulta de preços, sem envio
+        de dados pessoais identificáveis.</li>
+    </ul>
+
+    <h3>4.2 Transferência internacional</h3>
+    <p>
+      O Google Firebase pode processar dados em servidores localizados nos Estados Unidos.
+      A IndieCompany assegura que tais transferências seguem as cláusulas contratuais padrão e
+      as determinações da LGPD (art. 33), exigindo o mesmo nível de proteção de dados do Brasil.
+    </p>
+
+    <h3>4.3 Não vendemos dados</h3>
+    <p>
+      A IndieCompany <strong>não vende, aluga ou comercializa</strong> dados pessoais dos usuários
+      para terceiros sob qualquer circunstância.
+    </p>
+
+    <h2>5. Seus direitos (LGPD)</h2>
+    <p>
+      A LGPD (Lei nº 13.709/2018) garante a você, titular dos dados, os seguintes direitos:
+    </p>
+    <ul>
+      <li><strong>Confirmação e acesso</strong> — saber se tratamos seus dados e acessá-los (art. 18, I e II)</li>
+      <li><strong>Correção</strong> — solicitar a correção de dados incompletos ou desatualizados (art. 18, III)</li>
+      <li><strong>Anonimização, bloqueio ou eliminação</strong> — solicitar a exclusão de dados desnecessários ou
+        tratados em desconformidade com a lei (art. 18, IV)</li>
+      <li><strong>Portabilidade</strong> — receber seus dados em formato estruturado (art. 18, V)</li>
+      <li><strong>Eliminação</strong> — solicitar a exclusão total dos dados tratados com consentimento (art. 18, VI)</li>
+      <li><strong>Oposição</strong> — opor-se a determinado tratamento (art. 18, §2º)</li>
+      <li><strong>Revogação do consentimento</strong> — retirar o consentimento a qualquer momento (art. 8º, §5º)</li>
+      <li><strong>Revisão automatizada</strong> — solicitar revisão de decisões automatizadas (art. 20)</li>
+    </ul>
+    <p>
+      Para exercer qualquer desses direitos, entre em contato pelo e-mail
+      <a href="mailto:contato@indiecompany.com.br">contato@indiecompany.com.br</a>.
+      Responderemos em até <strong>15 dias</strong> corridos.
+    </p>
+
+    <h2>6. Segurança dos dados</h2>
+    <p>
+      Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não
+      autorizados, perda, destruição ou alteração:
+    </p>
+    <ul>
+      <li>Criptografia de dados em trânsito (TLS 1.3 / HTTPS)</li>
+      <li>Armazenamento em servidores seguros com controle de acesso restrito</li>
+      <li>Minimização de dados: armazenamos localmente sempre que possível</li>
+      <li>Monitoramento contínuo contra vulnerabilidades e acessos indevidos</li>
+      <li>Testes de segurança periódicos em nossas integrações</li>
+    </ul>
+
+    <h2>7. Retenção de dados</h2>
+    <p>
+      Mantemos seus dados apenas pelo tempo necessário para cumprir as finalidades descritas nesta
+      política ou conforme exigido por lei:
+    </p>
+    <ul>
+      <li><strong>Consultas de placa/modelo:</strong> não são armazenadas em nossos servidores.
+        Processadas em tempo real e descartadas após a resposta.</li>
+      <li><strong>Favoritos e preferências:</strong> armazenados localmente no dispositivo. Ao
+        desinstalar o app, esses dados são automaticamente removidos.</li>
+      <li><strong>Dados de analytics e crash:</strong> armazenados por até 26 meses pelo Firebase,
+        conforme política de retenção padrão do Google Analytics.</li>
+    </ul>
+
+    <h2>8. Privacidade de crianças</h2>
+    <p>
+      O <strong class="app-name">FipeApp</strong> não é direcionado a crianças menores de 13 anos.
+      Não coletamos intencionalmente dados de crianças. Se você é pai, mãe ou responsável e souber
+      que seu filho nos forneceu dados pessoais sem o seu consentimento, entre em contato conosco
+      para que possamos remover essas informações imediatamente.
+    </p>
+    <p>
+      Nosso aplicativo está em conformidade com a
+      <strong>Children's Online Privacy Protection Act (COPPA)</strong> dos EUA e com os requisitos
+      de conteúdo infantil da Google Play e App Store.
+    </p>
+
+    <h2>9. Cookies e tecnologias similares</h2>
+    <p>
+      O <strong class="app-name">FipeApp</strong> é um aplicativo nativo (não um website) e
+      <strong>não utiliza cookies de rastreamento</strong>. O Firebase Analytics utiliza
+      identificadores anônimos de instância de app, que não constituem cookies tradicionais.
+    </p>
+
+    <h2 id="termos">10. Termos de Uso</h2>
+    <p>
+      Ao utilizar o <strong class="app-name">FipeApp</strong>, você concorda com os seguintes termos:
+    </p>
+    <ul>
+      <li>O aplicativo utiliza dados públicos da Tabela FIPE e de APIs de consulta veicular. Os
+        valores e informações são fornecidos "como estão" (as-is), sem garantia de exatidão absoluta.</li>
+      <li>A estimativa de IPVA é baseada em alíquotas estaduais públicas e no valor FIPE do veículo.
+        O valor real pode variar conforme legislação estadual, descontos ou isenções aplicáveis.</li>
+      <li>Você é responsável pelo uso das informações fornecidas pelo app. A IndieCompany não se
+        responsabiliza por decisões financeiras ou comerciais tomadas com base nos dados do app.</li>
+      <li>É proibido o uso do app para fins ilícitos, mineração de dados, engenharia reversa ou
+        qualquer atividade que viole a legislação brasileira.</li>
+      <li>A IndieCompany reserva-se o direito de modificar estes Termos de Uso a qualquer momento,
+        notificando os usuários sobre alterações significativas.</li>
+    </ul>
+
+    <h2>11. Alterações nesta política</h2>
+    <p>
+      Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre alterações
+      significativas por meio de:
+    </p>
+    <ul>
+      <li>Aviso dentro do próprio aplicativo</li>
+      <li>Atualização na página de privacidade do nosso site</li>
+      <li>E-mail (quando aplicável e se tivermos seu contato)</li>
+    </ul>
+    <p>
+      Recomendamos a revisão periódica desta política. O uso continuado do aplicativo após
+      modificações constitui aceitação das novas condições.
+    </p>
+
+    <h2>12. Encarregado de Dados (DPO)</h2>
+    <p>
+      Nosso Encarregado pelo Tratamento de Dados Pessoais (Data Protection Officer) está à
+      disposição para esclarecer dúvidas e receber comunicações dos titulares e da Autoridade
+      Nacional de Proteção de Dados (ANPD):
+    </p>
+    <ul>
+      <li><strong>Nome:</strong> Encarregado de Privacidade — IndieCompany</li>
+      <li><strong>E-mail:</strong> <a href="mailto:contato@indiecompany.com.br">contato@indiecompany.com.br</a></li>
+    </ul>
+
+    <h2>13. Legislação aplicável e foro</h2>
+    <p>
+      Esta política é regida pela legislação da República Federativa do Brasil, em especial a
+      Lei nº 13.709/2018 (LGPD), Marco Civil da Internet (Lei nº 12.965/2014) e Código de Defesa
+      do Consumidor (Lei nº 8.078/1990). Fica eleito o foro da comarca de São Paulo/SP para
+      dirimir quaisquer controvérsias decorrentes desta política.
+    </p>
+
+    <hr>
+
+    <p style="text-align: center; font-size: 0.85rem; color: var(--text-2);">
+      &copy; <span id="currentYear"></span> IndieCompany. Todos os direitos reservados.
+    </p>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container has-text-centered footer-bottom" style="margin-top: 0; padding-top: 0;">
       &copy; <span class="copyright-year"></span> IndieCompany —
-      <a href="index.html">Início</a>
+      <a href="index.html">Voltar ao início</a>
     </div>
   </footer>
 
