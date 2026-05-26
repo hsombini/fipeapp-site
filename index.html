@@ -1,338 +1,331 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FipeApp — Consulte precos de veiculos, calcule IPVA, compare modelos e encontre o valor pela placa. Tabela FIPE sempre atualizada.">
-  <meta name="theme-color" content="#2563eb">
-  <title>FipeApp — Precos de Veiculos na Palma da Mao</title>
+  <meta name="description" content="FipeApp — O valor do seu veículo na palma da mão. Consulte a Tabela FIPE por placa ou modelo, compare preços e calcule IPVA. Grátis e sem anúncios invasivos.">
+  <meta name="theme-color" content="#020617">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>FipeApp — Preços de Veículos na Palma da Mão</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['\"Inter\"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-slate-950 text-white font-sans antialiased">
 
-  <!-- NAVBAR -->
-  <nav class="navbar is-fixed-top has-background-white" role="navigation" aria-label="main navigation" style="border-bottom: 1px solid #e5e7eb;">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5" href="#">
-          <i class="fa-solid fa-car-side has-text-link mr-2"></i>
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#inicio" class="flex items-center gap-2 text-xl font-bold tracking-tight">
+          <i class="fa-solid fa-car-side text-blue-500 text-2xl"></i>
           <span class="app-name">FipeApp</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="mainNavbar" class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item has-text-weight-medium" href="#inicio">Inicio</a>
-          <a class="navbar-item has-text-weight-medium" href="#recursos">Recursos</a>
-          <a class="navbar-item has-text-weight-medium" href="#telas">Telas</a>
-          <a class="navbar-item has-text-weight-medium" href="#baixar">Baixar</a>
-          <a class="navbar-item has-text-weight-medium" href="privacidade.html">Privacidade</a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#recursos" class="text-slate-300 hover:text-white transition-colors">Recursos</a>
+          <a href="#telas" class="text-slate-300 hover:text-white transition-colors">Telas</a>
+          <a href="#baixar" class="text-slate-300 hover:text-white transition-colors">Baixar</a>
+          <a href="privacidade.html" class="text-slate-300 hover:text-white transition-colors">Privacidade</a>
         </div>
+
+        <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#recursos" class="block text-slate-300 hover:text-white py-2 font-medium">Recursos</a>
+        <a href="#telas" class="block text-slate-300 hover:text-white py-2 font-medium">Telas</a>
+        <a href="#baixar" class="block text-slate-300 hover:text-white py-2 font-medium">Baixar</a>
+        <a href="privacidade.html" class="block text-slate-300 hover:text-white py-2 font-medium">Privacidade</a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero is-large has-background-link" style="padding-top: 4rem;">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <p class="has-text-weight-semibold has-text-warning mb-3 is-size-7" style="text-transform: uppercase; letter-spacing: 1.5px;">
-              <i class="fa-solid fa-chart-line"></i>&ensp;IndieCompany
-            </p>
-            <h1 class="title is-1 has-text-white has-text-weight-bold mb-4">
-              O valor do seu veiculo na palma da mao
-            </h1>
-            <p class="subtitle is-5 has-text-white-ter mb-5">
-              Consulte a <strong class="has-text-white">Tabela FIPE</strong> em tempo real. Descubra o preco pela <strong class="has-text-white">placa</strong>, calcule o <strong class="has-text-white">IPVA</strong>, compare modelos e acompanhe a valorizacao do seu carro, moto ou caminhao.
-            </p>
-            <div class="buttons">
-              <a href="#baixar" class="button is-white is-rounded is-medium has-text-weight-semibold">
-                <span class="icon"><i class="fa-brands fa-google-play has-text-link"></i></span>
-                <span>Google Play</span>
-              </a>
-              <a href="#baixar" class="button is-outlined is-rounded is-medium has-text-weight-semibold" style="border-color: rgba(255,255,255,0.4); color: white;">
-                <span class="icon"><i class="fa-brands fa-apple"></i></span>
-                <span>App Store</span>
-              </a>
-            </div>
-            <p class="mt-3 is-size-7 has-text-grey-lighter">
-              <i class="fa-solid fa-shield-halved"></i>&ensp;Gratis &middot; Sem anuncios invasivos &middot; LGPD
-            </p>
-          </div>
-          <div class="column is-6 has-text-centered">
-            <div class="phone-frame mt-4">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="mock-header">
-                  <span class="mock-time">9:41</span>
-                  <div class="mock-icons">
-                    <i class="fa-solid fa-signal"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                    <i class="fa-solid fa-battery-full"></i>
-                  </div>
-                </div>
-                <div class="mock-app-header">FipeApp</div>
-                <div class="mock-search">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <span>Digite a placa ou modelo...</span>
-                </div>
-                <div class="mock-card">
-                  <div class="mock-card-title">Honda Civic EXL 2.0 2022</div>
-                  <div class="mock-card-price">R$ 118.490,00</div>
-                  <div class="mock-card-badge"><span class="tag is-success is-light">FIPE atual</span></div>
-                </div>
-                <div class="mock-card">
-                  <div class="mock-card-title">IPVA estimado 2025</div>
-                  <div class="mock-card-price">R$ 4.739,60</div>
-                  <div class="mock-card-badge"><span class="tag is-info is-light">4% SP</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section id="inicio" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.08),transparent_50%)]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-  <!-- FEATURES -->
-  <section id="recursos" class="section has-background-white">
-    <div class="container">
-      <div class="has-text-centered mb-6">
-        <h2 class="title is-2 has-text-weight-bold">Tudo que voce precisa</h2>
-        <p class="subtitle is-5 has-text-grey-dark" style="max-width: 600px; margin: 0 auto;">
-          Ferramentas inteligentes para quem compra, vende ou simplesmente quer saber o valor real do seu veiculo.
-        </p>
-      </div>
+        <div class="max-w-xl">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+            <i class="fa-solid fa-rocket text-xs"></i>
+            <span>Grátis &middot; Sem anúncios invasivos &middot; LGPD</span>
+          </div>
 
-      <div class="columns is-multiline">
-        <div class="column is-4">
-          <div class="box p-5" style="border: 1px solid #e5e7eb; border-radius: 16px;">
-            <span class="icon is-large has-text-link mb-3" style="background: #eff6ff; border-radius: 12px; width: 52px; height: 52px;">
-              <i class="fa-solid fa-star fa-lg"></i>
-            </span>
-            <h3 class="title is-5 has-text-weight-bold">Favoritar Veiculos</h3>
-            <p class="has-text-grey-dark">Salve seus veiculos favoritos e acompanhe a variacao de preco ao longo do tempo. Receba alertas quando o valor mudar.</p>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box p-5" style="border: 1px solid #e5e7eb; border-radius: 16px;">
-            <span class="icon is-large has-text-link mb-3" style="background: #eff6ff; border-radius: 12px; width: 52px; height: 52px;">
-              <i class="fa-solid fa-file-lines fa-lg"></i>
-            </span>
-            <h3 class="title is-5 has-text-weight-bold">Consulta por Placa</h3>
-            <p class="has-text-grey-dark">Digite a placa do veiculo e descubra instantaneamente modelo, ano, preco FIPE e muito mais. Simples e rapido.</p>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box p-5" style="border: 1px solid #e5e7eb; border-radius: 16px;">
-            <span class="icon is-large has-text-link mb-3" style="background: #eff6ff; border-radius: 12px; width: 52px; height: 52px;">
-              <i class="fa-solid fa-calculator fa-lg"></i>
-            </span>
-            <h3 class="title is-5 has-text-weight-bold">Calculo de IPVA</h3>
-            <p class="has-text-grey-dark">Calcule o IPVA com base na aliquota do seu estado. Veja o valor estimado e planeje seu orcamento anual.</p>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box p-5" style="border: 1px solid #e5e7eb; border-radius: 16px;">
-            <span class="icon is-large has-text-link mb-3" style="background: #eff6ff; border-radius: 12px; width: 52px; height: 52px;">
-              <i class="fa-solid fa-scale-balanced fa-lg"></i>
-            </span>
-            <h3 class="title is-5 has-text-weight-bold">Comparar Precos</h3>
-            <p class="has-text-grey-dark">Compare ate 5 veiculos lado a lado. Analise preco, ano, desvalorizacao e escolha com confianca.</p>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box p-5" style="border: 1px solid #e5e7eb; border-radius: 16px;">
-            <span class="icon is-large has-text-link mb-3" style="background: #eff6ff; border-radius: 12px; width: 52px; height: 52px;">
-              <i class="fa-solid fa-arrow-trend-up fa-lg"></i>
-            </span>
-            <h3 class="title is-5 has-text-weight-bold">Valorizacao por Ano</h3>
-            <p class="has-text-grey-dark">Graficos interativos mostram a valorizacao ou desvalorizacao do veiculo ano a ano. Dados historicos da FIPE.</p>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box p-5" style="border: 1px solid #e5e7eb; border-radius: 16px;">
-            <span class="icon is-large has-text-link mb-3" style="background: #eff6ff; border-radius: 12px; width: 52px; height: 52px;">
-              <i class="fa-solid fa-bell fa-lg"></i>
-            </span>
-            <h3 class="title is-5 has-text-weight-bold">Alertas de Preco</h3>
-            <p class="has-text-grey-dark">Defina um preco-alvo e receba notificacao quando o veiculo atingir o valor desejado. Nunca perca uma oportunidade.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            O valor do seu veículo<br>
+            <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">na palma da mão</span>
+          </h1>
 
-  <!-- SCREENSHOTS -->
-  <section id="telas" class="section has-background-light">
-    <div class="container">
-      <div class="has-text-centered mb-6">
-        <h2 class="title is-2 has-text-weight-bold">Conheca o <span class="app-name">FipeApp</span></h2>
-        <p class="subtitle is-5 has-text-grey-dark" style="max-width: 600px; margin: 0 auto;">
-          Interface moderna, intuitiva e rapida. Tudo o que voce precisa a poucos toques.
-        </p>
-      </div>
-
-      <div class="columns is-multiline is-centered">
-        <div class="column is-4 has-text-centered">
-          <div class="phone-mockup-static">
-            <div class="phone-frame">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="mock-header">
-                  <span class="mock-time">9:41</span>
-                  <div class="mock-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></div>
-                </div>
-                <div class="screen-content">
-                  <div class="sc-title">Buscar Veiculo</div>
-                  <div class="sc-input"><i class="fa-solid fa-magnifying-glass"></i> Placa ou modelo</div>
-                  <div class="sc-item">Toyota Corolla XEi 2.0<br><small>2023 &middot; R$ 137.590</small></div>
-                  <div class="sc-item">VW T-Cross Highline<br><small>2024 &middot; R$ 152.400</small></div>
-                  <div class="sc-item">Jeep Compass Limited<br><small>2022 &middot; R$ 131.200</small></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="has-text-weight-bold mt-3">Busca inteligente</p>
-          <p class="is-size-7 has-text-grey">por placa ou modelo</p>
-        </div>
-
-        <div class="column is-4 has-text-centered">
-          <div class="phone-mockup-static">
-            <div class="phone-frame">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="mock-header">
-                  <span class="mock-time">9:41</span>
-                  <div class="mock-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></div>
-                </div>
-                <div class="screen-content">
-                  <div class="sc-title">Detalhes</div>
-                  <div class="sc-detail-card">
-                    <div class="sc-detail-name">Honda Civic EXL</div>
-                    <div class="sc-detail-year">2022 &middot; 2.0 Flex</div>
-                    <div class="sc-detail-price">R$ 118.490</div>
-                    <div class="sc-detail-row"><span>IPVA (SP)</span><span>R$ 4.739</span></div>
-                    <div class="sc-detail-row"><span>Seguro medio</span><span>R$ 3.200</span></div>
-                    <div class="sc-detail-chart">Valorizacao +3,2% no ano</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="has-text-weight-bold mt-3">Detalhes completos</p>
-          <p class="is-size-7 has-text-grey">IPVA, seguro e historico</p>
-        </div>
-
-        <div class="column is-4 has-text-centered">
-          <div class="phone-mockup-static">
-            <div class="phone-frame">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="mock-header">
-                  <span class="mock-time">9:41</span>
-                  <div class="mock-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></div>
-                </div>
-                <div class="screen-content">
-                  <div class="sc-title">Comparar</div>
-                  <div class="sc-compare-item"><strong>Civic EXL 22</strong> R$ 118.490 <span class="tag is-success is-light is-small">-8%</span></div>
-                  <div class="sc-compare-item"><strong>Corolla XEi 22</strong> R$ 131.800 <span class="tag is-info is-light is-small">-5%</span></div>
-                  <div class="sc-compare-item"><strong>Cruze LTZ 22</strong> R$ 108.900 <span class="tag is-warning is-light is-small">-12%</span></div>
-                  <div class="sc-compare-chart">Grafico comparativo de precos</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="has-text-weight-bold mt-3">Comparacao lado a lado</p>
-          <p class="is-size-7 has-text-grey">ate 5 veiculos simultaneos</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="baixar" class="hero has-background-dark">
-    <div class="hero-body has-text-centered">
-      <div class="container">
-        <h2 class="title is-2 has-text-white has-text-weight-bold">Baixe agora, e gratis</h2>
-        <p class="subtitle is-5 has-text-grey-lighter mb-5" style="max-width: 520px; margin: 0 auto 2rem;">
-          Disponivel para Android e iOS. Sem anuncios invasivos, sem coleta abusiva de dados. Seu veiculo, seu preco.
-        </p>
-        <div class="buttons is-centered mb-5">
-          <a href="#" class="button is-link is-rounded is-medium has-text-weight-semibold">
-            <span class="icon"><i class="fa-brands fa-google-play"></i></span>
-            <span>Google Play</span>
-          </a>
-          <a href="#" class="button is-white is-outlined is-rounded is-medium has-text-weight-semibold">
-            <span class="icon"><i class="fa-brands fa-apple"></i></span>
-            <span>App Store</span>
-          </a>
-        </div>
-        <div class="has-text-centered">
-          <div class="is-inline-block p-5" style="border: 2px dashed rgba(255,255,255,0.2); border-radius: 16px;">
-            <span class="icon is-large has-text-grey-lighter">
-              <i class="fa-solid fa-qrcode fa-2x"></i>
-            </span>
-            <p class="is-size-7 has-text-grey-light mt-2">Escaneie para baixar</p>
-          </div>
-        </div>
-        <p class="mt-5 is-size-7 has-text-grey">
-          <i class="fa-solid fa-lock"></i>&ensp;Seus dados estao seguros. Veja nossa
-          <a href="privacidade.html" class="has-text-link">Politica de Privacidade</a>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer has-background-dark has-text-light">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-4">
-          <p class="has-text-white has-text-weight-bold is-size-5 mb-2">
-            <i class="fa-solid fa-car-side has-text-link mr-2"></i>
-            <span class="app-name">FipeApp</span>
+          <p class="mt-6 text-lg text-slate-400 leading-relaxed">
+            Consulte a Tabela FIPE por placa ou modelo. Compare preços, calcule IPVA e acompanhe a valorização do seu carro — tudo em um app simples e rápido.
           </p>
-          <p class="has-text-grey-light is-size-7">O app definitivo para consultar precos de veiculos. Tabela FIPE sempre atualizada, calculo de IPVA, comparacao de modelos e muito mais.</p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-semibold hover:bg-slate-200 transition-colors shadow-lg shadow-white/5">
+              <i class="fa-brands fa-google-play text-xl"></i>
+              <div class="text-left leading-tight">
+                <div class="text-xs font-normal">Disponível no</div>
+                <div class="text-sm">Google Play</div>
+              </div>
+            </a>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-xl font-semibold hover:bg-slate-200 transition-colors shadow-lg shadow-white/5">
+              <i class="fa-brands fa-apple text-xl"></i>
+              <div class="text-left leading-tight">
+                <div class="text-xs font-normal">Baixar na</div>
+                <div class="text-sm">App Store</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-10 flex gap-8">
+            <div>
+              <div class="text-2xl font-bold text-white">1M+</div>
+              <div class="text-sm text-slate-500">consultas</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">50K+</div>
+              <div class="text-sm text-slate-500">downloads</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">4.8</div>
+              <div class="text-sm text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-star text-yellow-500 text-xs"></i>
+                <span>avaliação</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="column is-2">
-          <h5 class="has-text-white has-text-weight-bold is-size-7 mb-3">LINKS</h5>
-          <ul>
-            <li><a href="#inicio" class="has-text-grey-light is-size-7">Inicio</a></li>
-            <li><a href="#recursos" class="has-text-grey-light is-size-7">Recursos</a></li>
-            <li><a href="#telas" class="has-text-grey-light is-size-7">Telas</a></li>
-            <li><a href="#baixar" class="has-text-grey-light is-size-7">Baixar</a></li>
-          </ul>
+
+        <div class="relative flex justify-center lg:justify-end">
+          <div class="phone relative z-10" id="hero-phone">
+            <div class="phone-screen relative">
+              <img src="img/super-busca.png" alt="FipeApp" class="carousel-img active absolute inset-0">
+              <img src="img/filtro-marcas.png" alt="FipeApp" class="carousel-img absolute inset-0">
+              <img src="img/lista-favoritos.png" alt="FipeApp" class="carousel-img absolute inset-0">
+              <img src="img/placa.png" alt="FipeApp" class="carousel-img absolute inset-0">
+            </div>
+          </div>
+          <div class="phone phone-behind hidden lg:block" style="top:26px;right:-40px;">
+            <div class="phone-screen">
+              <img src="img/super-busca.png" alt="FipeApp" class="w-full h-full object-cover">
+            </div>
+          </div>
         </div>
-        <div class="column is-3">
-          <h5 class="has-text-white has-text-weight-bold is-size-7 mb-3">LEGAL</h5>
-          <ul>
-            <li><a href="privacidade.html" class="has-text-grey-light is-size-7">Politica de Privacidade</a></li>
-            <li><a href="privacidade.html#termos" class="has-text-grey-light is-size-7">Termos de Uso</a></li>
-          </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="recursos" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+          Tudo que você <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">precisa</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-400">Ferramentas completas para acompanhar o mercado de veículos</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+            <i class="fa-solid fa-star text-blue-400 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Favoritar Veículos</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Salve seus veículos e acompanhe a valorização ao longo do tempo com notificações de mudanças de preço.</p>
         </div>
-        <div class="column is-3">
-          <h5 class="has-text-white has-text-weight-bold is-size-7 mb-3">CONTATO</h5>
-          <ul>
-            <li><a href="mailto:contato@indiecompany.com.br" class="has-text-grey-light is-size-7"><i class="fa-solid fa-envelope mr-1"></i> contato@indiecompany.com.br</a></li>
-            <li><span class="has-text-grey is-size-7"><i class="fa-solid fa-building mr-1"></i> IndieCompany</span></li>
-          </ul>
+
+        <div class="group bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:bg-emerald-500/20 transition-colors">
+            <i class="fa-solid fa-car text-emerald-400 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Consulta por Placa</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Digite a placa e veja modelo, ano, valor FIPE e dados do veículo em segundos.</p>
+        </div>
+
+        <div class="group bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
+            <i class="fa-solid fa-calculator text-purple-400 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Cálculo de IPVA</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Estimativa do IPVA baseada no valor FIPE e na alíquota do seu estado.</p>
+        </div>
+
+        <div class="group bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+            <i class="fa-solid fa-chart-simple text-orange-400 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Comparar Preços</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Compare lado a lado diferentes modelos, anos e versões para a melhor decisão.</p>
+        </div>
+
+        <div class="group bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors">
+            <i class="fa-solid fa-chart-line text-cyan-400 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Histórico de Preços</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Visualize a evolução de preços com gráficos mensais e identifique tendências do mercado.</p>
+        </div>
+
+        <div class="group bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-4 group-hover:bg-rose-500/20 transition-colors">
+            <i class="fa-solid fa-magnifying-glass text-rose-400 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Super Busca</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Filtros avançados por marca, modelo, ano e faixa de preço para encontrar exatamente o que procura.</p>
         </div>
       </div>
-      <hr class="has-background-grey-darker" style="margin: 2rem 0 1rem;">
-      <div class="has-text-centered has-text-grey is-size-7">
-        &copy; <span id="currentYear"></span> IndieCompany. Todos os direitos reservados.<br>
-        <span class="app-name">FipeApp</span> nao e afiliado a Fundacao Instituto de Pesquisas Economicas (FIPE).<br>
-        Os dados da Tabela FIPE sao de fonte publica.
+    </div>
+  </section>
+
+  <section id="telas" class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+          Conheça as <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">telas</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-400">Interface intuitiva, pensada para você</p>
+      </div>
+
+      <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0 scrollbar-hide">
+        <div class="flex-shrink-0 snap-center flex flex-col items-center gap-3">
+          <div class="phone-sm">
+            <div class="phone-screen">
+              <img src="img/super-busca.png" alt="Busca inteligente" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <span class="text-sm text-slate-500 font-medium">Busca inteligente</span>
+        </div>
+
+        <div class="flex-shrink-0 snap-center flex flex-col items-center gap-3">
+          <div class="phone-sm">
+            <div class="phone-screen">
+              <img src="img/filtro-marcas.png" alt="Filtro por marca" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <span class="text-sm text-slate-500 font-medium">Filtro por marca</span>
+        </div>
+
+        <div class="flex-shrink-0 snap-center flex flex-col items-center gap-3">
+          <div class="phone-sm">
+            <div class="phone-screen">
+              <img src="img/lista-favoritos.png" alt="Favoritos" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <span class="text-sm text-slate-500 font-medium">Favoritos</span>
+        </div>
+
+        <div class="flex-shrink-0 snap-center flex flex-col items-center gap-3">
+          <div class="phone-sm">
+            <div class="phone-screen">
+              <img src="img/placa.png" alt="Consulta por placa" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <span class="text-sm text-slate-500 font-medium">Consulta por placa</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="baixar" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.1),transparent_60%)]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+        Baixe agora, <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">é grátis</span>
+      </h2>
+      <p class="mt-4 text-lg text-slate-400">Disponível para Android e iOS</p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-2xl font-semibold text-lg hover:bg-slate-200 transition-colors shadow-lg shadow-white/5">
+          <i class="fa-brands fa-google-play text-2xl"></i>
+          <div class="text-left leading-tight">
+            <div class="text-xs font-normal">Disponível no</div>
+            <div>Google Play</div>
+          </div>
+        </a>
+        <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-2xl font-semibold text-lg hover:bg-slate-200 transition-colors shadow-lg shadow-white/5">
+          <i class="fa-brands fa-apple text-2xl"></i>
+          <div class="text-left leading-tight">
+            <div class="text-xs font-normal">Baixar na</div>
+            <div>App Store</div>
+          </div>
+        </a>
+      </div>
+
+      <p class="mt-8 text-sm text-slate-500">
+        Sem anúncios invasivos. Sua privacidade em primeiro lugar.
+        <a href="privacidade.html" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">Política de Privacidade</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="#inicio" class="flex items-center gap-2 text-lg font-bold mb-3">
+            <i class="fa-solid fa-car-side text-blue-500"></i>
+            <span class="app-name">FipeApp</span>
+          </a>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            Um produto <strong class="text-slate-400">IndieCompany</strong>. Consulte a Tabela FIPE de forma simples e rápida.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-slate-300 mb-3 uppercase tracking-wider">Links</h4>
+          <div class="space-y-2">
+            <a href="#inicio" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">Início</a>
+            <a href="#recursos" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">Recursos</a>
+            <a href="#telas" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">Telas</a>
+            <a href="#baixar" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">Baixar</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-slate-300 mb-3 uppercase tracking-wider">Legal</h4>
+          <div class="space-y-2">
+            <a href="privacidade.html" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">Privacidade</a>
+            <a href="privacidade.html#termos" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">Termos de Uso</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-slate-300 mb-3 uppercase tracking-wider">Contato</h4>
+          <div class="space-y-2">
+            <a href="mailto:contato@indiecompany.com.br" class="block text-sm text-slate-500 hover:text-slate-300 transition-colors">
+              <i class="fa-solid fa-envelope mr-1 text-xs"></i> contato@indiecompany.com.br
+            </a>
+            <span class="block text-sm text-slate-500">
+              <i class="fa-solid fa-building mr-1 text-xs"></i> IndieCompany
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 pt-8">
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          FipeApp não é afiliado à Fundação Instituto de Pesquisas Econômicas (FIPE). Os dados apresentados são obtidos de fontes públicas e podem apresentar divergências. Consulte sempre a tabela oficial no site da FIPE.
+        </p>
+        <p class="text-sm text-slate-500">
+          &copy; <span id="currentYear" class="copyright-year"></span> IndieCompany. Todos os direitos reservados.
+        </p>
       </div>
     </div>
   </footer>

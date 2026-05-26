@@ -17,23 +17,30 @@ window.FipeApp = {
   document.querySelectorAll('.app-name').forEach(function (el) {
     el.textContent = window.FipeApp.name;
   });
-  document.title = window.FipeApp.name + ' — Precos de Veiculos na Palma da Mao';
+  if (document.title.indexOf('{app}') === -1) {
+    document.title = window.FipeApp.name + ' \u2014 Preços de Veículos na Palma da Mão';
+  }
 
-  var burger = document.querySelector('.navbar-burger');
-  var menu = document.getElementById('mainNavbar');
-  if (burger && menu) {
-    burger.addEventListener('click', function () {
-      burger.classList.toggle('is-active');
-      menu.classList.toggle('is-active');
+  var menuBtn = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 
-  document.querySelectorAll('#mainNavbar .navbar-item').forEach(function (item) {
-    item.addEventListener('click', function () {
-      if (burger && burger.classList.contains('is-active')) {
-        burger.classList.remove('is-active');
-        menu.classList.remove('is-active');
-      }
-    });
-  });
+  var carouselImages = document.querySelectorAll('.carousel-img');
+  if (carouselImages.length > 0) {
+    var currentIdx = 0;
+    setInterval(function () {
+      carouselImages[currentIdx].classList.remove('active');
+      currentIdx = (currentIdx + 1) % carouselImages.length;
+      carouselImages[currentIdx].classList.add('active');
+    }, 4000);
+  }
 })();
